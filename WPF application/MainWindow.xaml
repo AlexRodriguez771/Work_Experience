@@ -1,0 +1,282 @@
+﻿<Window x:Class="WPF_application.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_application"
+        mc:Ignorable="d"
+        x:Name="Window"
+        ScrollViewer.CanContentScroll="True"
+        
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="RegConvert - Metric to inch conversion" WindowStyle="None" BorderThickness="6" ResizeMode="CanResizeWithGrip" MinWidth="450" BorderBrush="{DynamicResource PrimaryHueDarkBrush}" WindowStartupLocation="CenterScreen"  AllowsTransparency="True" Height="600" Width="800" MouseDown="MoveWindow" 
+        Closing="Window_Closing">
+
+    <Window.Resources>
+        <DataTemplate x:Key="MatCard">
+            <materialDesign:Card>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Background="{DynamicResource PrimaryHueLightBrush}">
+                        <TextBlock Text="{Binding US, StringFormat='US: {0}'}"/>
+                        <TextBlock Text="{Binding DIN, StringFormat='DIN:{0}'}"/>
+                        <TextBlock Text="{Binding UK, StringFormat='UK:{0}'}"/>
+                        <TextBlock Text="{Binding JIS, StringFormat='JIS:{0}'}"/>
+                        <TextBlock Text="{Binding Classification, StringFormat='Classification:{0}'}"/>
+                    </StackPanel>
+
+                </Grid>
+            </materialDesign:Card>
+        </DataTemplate>
+    </Window.Resources>
+    <materialDesign:DialogHost Identifier="MessageHost">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--#region Window Title Bar-->
+
+            <materialDesign:ColorZone Grid.Row="0" Mode="PrimaryDark">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="FormDropdown"  Margin="8" Height="22" Width="22" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Aqua"/>
+                        <TextBlock FontSize="20" VerticalAlignment="Center" Margin="8" Text="RegConvert - Metric to Inch Conversion "/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Style="{DynamicResource MaterialDesignFlatButton}" Click="MinWindow" ToolTip="Minimize">
+                            <materialDesign:PackIcon Kind="WindowMinimize" HorizontalAlignment="Center" />
+                        </Button>
+                        <Button Style="{DynamicResource MaterialDesignFlatButton}" Click="MaxWindow" ToolTip="Maximise/Restore">
+                            <materialDesign:PackIcon Kind="WindowMaximize" HorizontalAlignment="Center" />
+                        </Button>
+                        <Button Style="{DynamicResource MaterialDesignFlatButton}" Click="CloseWindow" ToolTip="Close">
+                            <materialDesign:PackIcon Kind="WindowClose" HorizontalAlignment="Center" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:ColorZone>
+
+            <!--#endregion-->
+
+            <!--#region Color/Menu Bar-->
+
+            <materialDesign:ColorZone Grid.Row="1" Mode="SecondaryMid"  Padding="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges">
+                        <StackPanel>
+                            <GroupBox Header="Set Number of Jobs" Margin="16 16 16 0">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <TextBlock VerticalAlignment="Center" Text="(Showing Last"/>
+                                        <TextBlock VerticalAlignment="Center" Text="Jobs)"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox Header="Set Default Printer" Margin="16 16 16 0">
+                                <StackPanel>
+                                    <ComboBox
+                                            Name="cbo_DefaultPrinter"
+                                            Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                                            materialDesign:TextFieldAssist.HasClearButton="True"
+                                            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+                                            materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+                                            materialDesign:HintAssist.Hint="Default Printer"
+                                            materialDesign:HintAssist.HelperText="Select Printer"
+                                            MinWidth="128">
+                                    </ComboBox>
+                                    <TextBlock Margin="5 25 5 5" Width="250" TextWrapping="Wrap" Text="Select a default printer to allow direct printing rather than selecting a printer every time you chose to print."/>
+                                </StackPanel>
+                            </GroupBox>
+
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+
+                </StackPanel>
+            </materialDesign:ColorZone>
+
+            <!--#endregion-->
+
+            <!--#region Main Body-->
+            <materialDesign:ColorZone Grid.Row="1" Mode="Standard">
+                <TabControl Name="TopTab" Style="{StaticResource MaterialDesignNavigatilRailTabControl}" materialDesign:ColorZoneAssist.Mode="PrimaryMid" TabStripPlacement="Top" materialDesign:NavigationRailAssist.ShowSelectionBackground="True" HorizontalContentAlignment="Center">
+                    <TabItem Width="200" x:Name="Tab1">
+                        <TabItem.Header>
+
+                            <StackPanel>
+                                <TextBlock Text="MM to Inches" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <StackPanel Height="30" Background="#1565c0">
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center" FontSize="17">
+                                Millimeter to inch
+                            </Label>
+                            <Label HorizontalAlignment="Center">Are you converting MM to Inch or Inch to MM</Label>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton Width="100" Content="MM to Inch" Click="RadioButton_Click" ToolTip="Millimeters to Inches"/>
+                                <RadioButton Width="100" Content="Inch to MM" Click="RadioButton_Click1" ToolTip="Inches To Millimeters"/>
+                            </StackPanel>
+                            <StackPanel Height="20">
+
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center">
+                                <Label>Please enter your conversion number</Label>
+                                <TextBox x:Name="TXBCN1" HorizontalAlignment="Left" Width="200" materialDesign:HintAssist.Hint="Please put a number here:" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                                <Label ToolTip="Here is your conversion">Conversion:</Label>
+                                <TextBox x:Name="TXBCN2" HorizontalAlignment="Left" Width="200">
+
+                                </TextBox>
+                            </StackPanel>
+                            <StackPanel Height="20">
+
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center">Press to Convert</Label>
+                            <Button Height="60" Width="120" VerticalAlignment="Center" Click="Button_Click_2" ToolTip="Press to Convert!">Convert</Button>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Width="200" x:Name="Tab2">
+                        <TabItem.Header>
+                            <StackPanel Width="auto" Height="auto">
+                                <TextBlock Text="Hardness" Width="auto" Height="auto" TextWrapping="WrapWithOverflow">
+
+                                </TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <StackPanel Height="30" Background="#1565c0">
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center" FontSize="17">
+                                Brinell to Rockwell
+                            </Label>
+                            <StackPanel>
+                                <Label>Choose a conversion number here:</Label>
+                                <ComboBox x:Name="Combo_Box1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" ItemsSource="{Binding HardnessCollection, Mode=OneWay}" DisplayMemberPath="KEY" SelectedValuePath="Value" IsSynchronizedWithCurrentItem="True" ToolTip="Click to show choices">
+                                </ComboBox>
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center">
+                                Conversion:
+                            </Label>
+                            <TextBlock Text="{Binding ElementName=Combo_Box1, Path=SelectedItem.Value}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                
+                            </TextBlock>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Width="200" x:Name="Tab3">
+                        <TabItem.Header>
+                            <StackPanel>
+                                <TextBlock Text="Surface" TextWrapping="WrapWithOverflow">
+
+                                </TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <StackPanel Height="30" Background="#1565c0">
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center" FontSize="20">Ra Micromillimeters to Ra inches</Label>
+                            <StackPanel>
+                                <StackPanel HorizontalAlignment="Left">
+                                    <Label>
+                                        Choose a conversion number here:
+                                    </Label>
+                                    <ComboBox x:Name="Combo_Box2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="30" ItemsSource="{Binding SurfaceCollection, Mode=OneWay}" DisplayMemberPath="sKEY" SelectedValuePath="sValue" IsSynchronizedWithCurrentItem="True" ToolTip="Click to show choices">
+                                       
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center">
+                                Conversion:
+                            </Label>
+                            <TextBlock Text="{Binding ElementName=Combo_Box2, Path=SelectedItem.sValue}" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            </TextBlock>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Width="200" x:Name="Tab4">
+                        <TabItem.Header>
+                            <StackPanel Height="auto" Width="auto">
+                                <TextBlock Text="Material">
+
+                                </TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="500"/>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="100"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Vertical">
+                            <StackPanel Height="30" Background="#1565c0">
+                            </StackPanel>
+                            <Label HorizontalAlignment="Center" FontSize="17">Material Conversion</Label>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBox HorizontalAlignment="Center" Height="30" Width="300" x:Name="TXBCN7" HorizontalContentAlignment="Center" materialDesign:HintAssist.Hint="Please enter a number"></TextBox>
+                            </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Click="Button_Click_4" HorizontalAlignment="Right" Height="60" Width="120">Search</Button>
+                                    <Button Click="Button_Click_5" HorizontalAlignment="Right" Height="60" Width="120" >Clear</Button>
+                                </StackPanel>
+                                <Grid>
+                                    <ListBox Grid.Row="2" HorizontalAlignment="Stretch" ItemsSource="{Binding MatRefCollection}" ItemTemplate="{StaticResource MatCard}" IsSynchronizedWithCurrentItem="True" HorizontalContentAlignment="Center" ScrollViewer.CanContentScroll="True">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VirtualizingStackPanel IsItemsHost="True" Grid.Row="2" ScrollViewer.CanContentScroll="True"/>
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                </ListBox>
+                                </Grid>
+                                <!--<DataGrid ScrollViewer.CanContentScroll="True" Width="600" Height="200" ItemsSource="{Binding MatRefCollection}">
+
+                            </DataGrid>-->
+                            <StackPanel>
+                                <materialDesign:ColorZone Padding="40" Mode="Custom" VerticalAlignment="Bottom">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    </StackPanel>
+                                </materialDesign:ColorZone>
+                            </StackPanel>
+                            <materialDesign:ColorZone Padding="35" Mode="PrimaryLight" VerticalAlignment="Bottom">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Click="Button_Click_6" Content="Enter a new item"/>
+                                    <Button Click="Button_Click_7" Content="Edit a searched item"/>
+                                </StackPanel>
+                            </materialDesign:ColorZone>
+                        </StackPanel>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </materialDesign:ColorZone>
+
+
+            <!--#endregion-->
+            <materialDesign:ColorZone Grid.Row="1" Mode="PrimaryMid" HorizontalAlignment="Right">
+                <materialDesign:PopupBox  PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right">
+                    <StackPanel>
+                        <GroupBox Header="Set Theme Mode" Margin="16 16 16 0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock VerticalAlignment="Center" Margin="5" Text="Light"/>
+                                <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" Name="tog_LightDark" HorizontalAlignment="Center" ToolTip="Select LIGHT or DARK Theme" IsChecked="False" Click="ToggleDark"/>
+                                <TextBlock VerticalAlignment="Center" Margin="5"  Text="Dark"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </materialDesign:ColorZone>
+        </Grid>
+    </materialDesign:DialogHost>
+</Window>
+

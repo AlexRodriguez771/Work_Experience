@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_application.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_application"
+        mc:Ignorable="d"
+        Title="Edit item" Height="315" Width="400" WindowStartupLocation="CenterOwner" >
+
+    <StackPanel>
+        <StackPanel HorizontalAlignment="Left">
+
+            <Label Content="US standard:"/>
+            <TextBox x:Name="USTXB2" HorizontalAlignment="Left" Width="200"/>
+            <Label Content="DIN standard:"/>
+            <TextBox x:Name="DINTXB2" HorizontalAlignment="Left" Width="200"/>
+            <Label Content="UK standard:"/>
+            <TextBox x:Name="UKTXB2" HorizontalAlignment="Left" Width="200"/>
+            <Label Content="JIS standard:"/>
+            <TextBox x:Name="JISTXB2" HorizontalAlignment="Left" Width="200"/>
+            <Label HorizontalAlignment="Left" Content="Classification:"/>
+            <TextBox x:Name="CTXB2" HorizontalAlignment="Left" Width="200"/>
+        </StackPanel>
+        <StackPanel>
+        </StackPanel>
+        <Button Content="Click to finalize" VerticalAlignment="Bottom" Click="Button_Click"/>
+    </StackPanel>
+</Window>

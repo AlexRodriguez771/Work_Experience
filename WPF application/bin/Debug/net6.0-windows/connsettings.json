@@ -1,0 +1,4 @@
+{
+  "JobBOSS": "Data Source=np:SQL\\sqlexpress;Initial Catalog=Production;Persist Security Info=True;User ID=Support;Password=lonestar;Connection Timeout=30",
+  "RegBOSS": "Data Source=np:SQL\\sqlexpress;Initial Catalog=RegBOSS;Persist Security Info=True;User ID=RegBOSS-ReadWrite;Password=UEM5kAR3aS;Connection Timeout=30"
+}

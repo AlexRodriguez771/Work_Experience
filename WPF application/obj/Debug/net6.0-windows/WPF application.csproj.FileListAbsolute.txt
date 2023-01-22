@@ -1,0 +1,47 @@
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\appsettings.json
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\WPF application.exe
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\connsettings.json
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\WPF application.deps.json
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\WPF application.runtimeconfig.json
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\WPF application.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\WPF application.pdb
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.csproj.AssemblyReference.cache
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\Window2.g.cs
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application_Content.g.cs
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application_MarkupCompile.cache
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application_MarkupCompile.lref
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\App.baml
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\Window1.baml
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\Window2.baml
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.g.resources
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.AssemblyInfoInputs.cache
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.AssemblyInfo.cs
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.csproj.CoreCompileInputs.cache
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.csproj.CopyComplete
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\refint\WPF application.dll
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.pdb
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\WPF application.genruntimeconfig.cache
+C:\Users\Alex Rodriguez\OneDrive\Desktop\WPF application\obj\Debug\net6.0-windows\ref\WPF application.dll
